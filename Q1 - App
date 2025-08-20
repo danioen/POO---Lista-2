@@ -1,0 +1,20 @@
+package questao01;
+
+public class Info {
+	public static void main(String[]args) {
+		Pessoa p = new Pessoa();
+
+		//Peso da pessoa
+		System.out.println(p.getPeso());
+		p.setPeso(74);
+		
+		//Altura da pessoa
+		System.out.println(p.getAltura());
+		p.setAltura(1.75);
+		
+		//Nome da pessoa
+		System.out.println(p.getNome());
+		p.setNome("Rodrigo");
+	}
+
+}
