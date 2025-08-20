@@ -1,1 +1,75 @@
 
+package Lista2;
+
+public class ContaBancaria {
+	private String numero;
+	private String titular;
+	private double saldo;
+
+	
+	//Numero
+	
+	public void setNumero(String numero) {
+		if(titular.trim().isEmpty()) {
+			throw new IllegalArgumentException("Titular invalido");
+		
+	}
+		this.numero = numero;
+	}
+	
+	public String getNumero() {
+		return numero;
+	}
+	
+	//Titular
+	public void setTitular(String titular) {
+		if(numero.trim().isEmpty()) {
+			throw new IllegalArgumentException("Número invalido");
+		}
+		this.titular = titular;
+	}
+	
+	public String getTitular() {
+		return titular;
+	}
+	
+	//Saldo
+	public void setSaldo(double saldo) {
+		if(saldo<0) {
+			throw new IllegalArgumentException(" invalido");
+		}
+		this.saldo = saldo;
+	}
+		
+	
+	public double getSaldo() {
+		return saldo;
+	}
+	
+	//Depositar
+	public void depositar(double valor) {
+		if(valor<=0) {
+			throw new IllegalArgumentException("Valor Inválido!");
+		}
+		saldo+=valor;
+			}
+	
+		public void sacar(double valor) {
+			if(saldo<=valor||valor<=0) {
+				throw new IllegalArgumentException("Valor invalido");
+			}
+			
+			saldo-=valor;
+		}
+		
+		public void transferir(ContaBancaria destino, double valor) {
+			this.sacar(valor);
+			destino.depositar(valor);
+		}
+		
+		
+		
+		
+
+		
+	}
